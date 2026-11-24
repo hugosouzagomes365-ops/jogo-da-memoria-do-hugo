@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#18864b">
+  <title>Jogo da Memória do Hugo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icone-192.png">
+  <link rel="apple-touch-icon" href="icone-192.png">
+  <link rel="stylesheet" href="placar.css">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="config.js"></script>
+  <script src="placar.js"></script>
+  <script src="placar-ui.js"></script>
+  <script src="regras.js"></script>
+  <script src="pwa.js" defer></script>
+  <script src="jogo.js" defer></script>
+</head>
+<body>
+  <main class="jogo">
+    <header class="topo">
+      <h1 id="titulo">Jogo da Memória do Hugo</h1>
+      <p>Recorde: <strong id="melhor">0</strong></p>
+    </header>
+    <section id="tela-inicio" class="tela" aria-labelledby="titulo">
+      <p>Encontre os pares de objetos! São dois níveis: primeiro 6 pares e depois 8. Cada jogada e cada segundo contam na pontuação.</p>
+      <button id="botao-jogar" class="botao" type="button">Começar</button>
+    </section>
+    <section id="tela-jogo" class="tela" hidden aria-label="Partida">
+      <p id="rotulo-nivel" class="status-nivel">Nível 1 · 6 pares</p>
+      <p class="placar-ao-vivo">Jogadas: <span id="jogadas">0</span> · Pontos do nível: <span id="pontos-nivel">1000</span></p>
+      <p id="aviso-nivel" role="status" hidden></p>
+      <div id="grade-cartas" class="grade" aria-label="Cartas"></div>
+    </section>
+    <section id="tela-fim" class="tela" hidden aria-label="Fim da partida">
+      <p class="instrucao">Você fez <strong id="resultado">0</strong> pontos!</p>
+      <p id="situacao-salvamento" role="status" aria-live="polite"></p>
+      <button id="botao-de-novo" class="botao" type="button">Jogar de novo</button>
+    </section>
+    <aside id="painel-placar" aria-label="Placar"></aside>
+  </main>
+</body>
+</html>
